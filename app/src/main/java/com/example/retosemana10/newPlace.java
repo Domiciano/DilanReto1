@@ -191,6 +191,7 @@ public class newPlace extends Fragment implements View.OnClickListener , Map.OnN
     @Override
     public void onNewAddress(String address) {
         direccionDellegada = address;
+        Log.e(">>>","Observable envia: "+address);
     }
 
 }
