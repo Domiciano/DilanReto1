@@ -106,6 +106,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public newPlace getNewP() {
+        return newP;
+    }
 
-
+    public Map getMap() {
+        return map;
+    }
 }

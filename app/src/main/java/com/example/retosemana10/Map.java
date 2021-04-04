@@ -93,7 +93,6 @@ public class Map extends Fragment implements OnMapReadyCallback, LocationListene
         continuarButton.setOnClickListener(this);
         continuarButton.setEnabled(false);
 
-        newP = newPlace.newInstance();
 
         return root;
 
@@ -192,11 +191,9 @@ public class Map extends Fragment implements OnMapReadyCallback, LocationListene
                adrdressListener.onNewAddress("HOLA MUNDO");
 
 
-               Log.e(">>>","BOTON CONTINUAR SIN PROBLEMA");
-               FragmentManager fragmentManager = getFragmentManager();
-               FragmentTransaction transaction = getFragmentManager().beginTransaction();
-               transaction.replace(R.id.fragmentContainer,newP);
-               transaction.commit();
+               MainActivity activity = (MainActivity) getActivity();
+               activity.showFragment(activity.getNewP());
+
            break;
        }
     }

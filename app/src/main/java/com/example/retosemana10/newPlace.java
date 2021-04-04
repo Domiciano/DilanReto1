@@ -47,8 +47,6 @@ public class newPlace extends Fragment implements View.OnClickListener , Map.OnN
     private View rootMapa;
     private String path = null;
 
-    private  Map map;
-
     private String direccionDellegada;
 
     public static final int CAMERA_CALLBACK = 12;
@@ -101,7 +99,6 @@ public class newPlace extends Fragment implements View.OnClickListener , Map.OnN
 
         txtnewName.setText(direccionDellegada);
 
-         map = Map.newInstance();
 
 
         if(path != null){
@@ -132,10 +129,8 @@ public class newPlace extends Fragment implements View.OnClickListener , Map.OnN
 
             case R.id.btnOpenMap:
 
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragmentContainer,map);
-                transaction.commit();
+                MainActivity activity = (MainActivity)getActivity();
+                activity.showFragment(activity.getMap());
 
                 break;
 
